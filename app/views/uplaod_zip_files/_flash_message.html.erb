@@ -1,0 +1,24 @@
+<div class="container">
+<% if flash!=nil %>
+	<% flash.each do |key, value| %>
+		<% if key.to_s == "error" || key.to_s == "alert" %>
+			<div class="alert alert-danger remove-flash-message">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                    <%= value %>
+
+             </div>
+		<% else %>											
+			<div class="alert alert-success remove-flash-message">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                    <%= value %>
+             </div>
+		<% end %>
+	<% end %>
+<% end %>
+</div>
+
+<script type="text/javascript">
+    setTimeout(function() {
+        $('.remove-flash-message').fadeOut('slow');
+    }, 5000);
+</script>

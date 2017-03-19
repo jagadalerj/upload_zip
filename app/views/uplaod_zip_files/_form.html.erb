@@ -1,0 +1,10 @@
+<div class="container" style="width: 50%;">
+<h2>Upload File</h2>
+<%= form_for @upload_zip_file, url: @url do |f| %>
+   <div class="form-group">
+   <%= f.label :zip_file, "Attach Zip File" %>
+   <%= f.file_field :zip_file %>
+  </div>
+  <%= f.submit "Upload File", :class => "btn btn-default"%>
+<%end%>
+</div>

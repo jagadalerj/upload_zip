@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Uploaded Files</h2>
+  <%= link_to 'Upload New file', new_uplaod_zip_file_path, :class => "btn btn-info pull-right" %>
+       
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sr.no</th>
+        <th>File Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+     <% @uploaded_zip_files.each_with_index do |zip, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= link_to "#{zip.zip_file_file_name}", uplaod_zip_file_path(zip) %></td>
+        <td>
+        	<%= link_to "Edit", edit_uplaod_zip_file_path(zip), :class => "btn btn-info" %>
+        	<%= link_to "Delete", uplaod_zip_file_path(zip), :method => "delete", :class => "btn btn-info" %>
+        </td>
+      </tr>
+     <%end%> 
+    </tbody>
+  </table>
+</div>

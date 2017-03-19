@@ -1,0 +1,19 @@
+<div class="container">
+<h2>XML files</h2>       
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Sr.no</th>
+        <th>File Name</th>
+      </tr>
+    </thead>
+    <tbody>
+     <% @xml_file_names.each_with_index do |xml_file_name, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= link_to xml_file_name, parse_file_uplaod_zip_files_path(:xml_file_name => xml_file_name, :id => @upload_zip_file) %></td>
+      </tr>
+     <%end%> 
+    </tbody>
+  </table>
+</div>
